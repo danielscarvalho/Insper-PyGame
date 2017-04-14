@@ -20,3 +20,6 @@
 * [The History of Nintendo](https://www.youtube.com/watch?v=H2CGmCcERrE)
 * [Sweat. Swearing. Tears. Indie Game Documentary -- Barking Mouse Studio Part 1](https://www.youtube.com/watch?v=t3W4Ict6isQ)
 * [Pixels and Polygons: An Indie Game Developer Story](https://www.youtube.com/watch?v=DFELtcCnD94)
+
+* [Program Arcade Games](http://programarcadegames.com)
+* [Invent With Python](https://inventwithpython.com)
