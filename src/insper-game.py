@@ -4,7 +4,15 @@ from sys import exit
 
 def loadSprite(fileName):
     return pygame.image.load(fileName).convert_alpha()
-
+    
+    
+def drawPlatform(x, y):
+   screen.blit(platformLeftImg, (x, y))
+   screen.blit(platformMidImg, (x+tileSize,y))
+   screen.blit(platformRightImg, (x+tileSize*2,y))
+   
+	
+	
 pygame.init()
 
 clock = pygame.time.Clock()
@@ -21,7 +29,7 @@ width, height = 980, 700
 tileSize = 70 #pixels
 avatarStep = 10 #pixels
 avatarX = tileSize #initial position
-avatarY = 20+height-tileSize*3
+avatarY = 470
 
 screen = pygame.display.set_mode((width, height), pygame.DOUBLEBUF, 32)
 
@@ -48,12 +56,15 @@ musicPlaying = True
 grassCenterImg = loadSprite('img/Tiles/grassCenter.png')
 grassMidImg = loadSprite('img/Tiles/grassMid.png')
 signRightImg = loadSprite('img/Tiles/signRight.png')
+
+platformLeftImg = loadSprite('img/Tiles/grassHalfLeft.png')
+platformMidImg = loadSprite('img/Tiles/grassHalfMid.png')
+platformRightImg = loadSprite('img/Tiles/grassHalfRight.png')
+boxedItemImg = loadSprite('img/Tiles/boxitem.png')
+
 avatarStandImg = loadSprite('img/Player/p3_stand.png')
 avatarJumpImg = loadSprite('img/Player/p3_jump.png')
 avatarDownImg = loadSprite('img/Player/p3_duck.png')
-
-
-
 
 while running:
     screen.blit(backgroundImg, background_rect)
@@ -63,6 +74,10 @@ while running:
     screen.blit(grassCenterImg, (0,height-tileSize))
     
     screen.blit(avatarStandImg, (avatarX, avatarY))
+    
+    screen.blit(boxedItemImg, (400, 400-tileSize))
+    drawPlatform(400, 400)
+    
     pygame.display.update()
     
     for event in pygame.event.get():
