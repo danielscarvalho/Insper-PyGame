@@ -67,11 +67,16 @@ avatarJumpImg = loadSprite('img/Player/p3_jump.png')
 avatarDownImg = loadSprite('img/Player/p3_duck.png')
 
 while running:
+    #fundo completo (3 x tela)
     screen.blit(backgroundImg, background_rect)
     
+    #Seta
     screen.blit(signRightImg, (0,height-tileSize*3))
-    screen.blit(grassMidImg, (0,height-tileSize*2))
-    screen.blit(grassCenterImg, (0,height-tileSize))
+    
+    #Chao
+    for grid in range(0,1000,70):	
+    	screen.blit(grassMidImg, (grid,height-tileSize*2))
+    	screen.blit(grassCenterImg, (grid,height-tileSize))
     
     screen.blit(avatarStandImg, (avatarX, avatarY))
     
