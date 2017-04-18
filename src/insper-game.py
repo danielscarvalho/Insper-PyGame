@@ -8,6 +8,8 @@
 
 # Estrutura básica do jogo - exemplo
 
+# Fazer fork no Github: https://github.com/danielscarvalho/Insper-PyGame
+
 #TODO: Refazer (refactor) o programa utilizando classes (OO - Orientação a Objetos)
 #TODO: Criar novas fases do jogo utilizando os diversos sprites (imagens) disponíveis
 #TODO: Possibilitar trocar de avatar: rosa, verde e azul
