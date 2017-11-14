@@ -6,15 +6,15 @@
 # Prof: Romero Tori
 # Prof: Daniel Carvalho @danielscarvalho
 
-# Estrutura básica do jogo - exemplo
+# Estrutura bÃ¡sica do jogo - exemplo
 
 # Fazer fork no Github: https://github.com/danielscarvalho/Insper-PyGame
 
-#TODO: Refazer (refactor) o programa utilizando classes (OO - Orientação a Objetos)
-#TODO: Criar novas fases do jogo utilizando os diversos sprites (imagens) disponíveis
+#TODO: Refazer (refactor) o programa utilizando classes (OO - Orientaï¿½ï¿½o a Objetos)
+#TODO: Criar novas fases do jogo utilizando os diversos sprites (imagens) disponï¿½veis
 #TODO: Possibilitar trocar de avatar: rosa, verde e azul
 #TODO: Criar tela inicial (splash screen)
-#TODO: Criar menu e tela de configuração
+#TODO: Criar menu e tela de configuraï¿½ï¿½o
 #TODO: Criar recursos para salvar o jogo
 #TODO: Montar testes de SW
 #TODO: BIG-FIX
@@ -23,9 +23,9 @@ import pygame
 from pygame.locals import *
 
 class Position:
-    def __init__(self): #método construtor da classe
-        tileSize = 70 #tamanho básico dos sprites (imagens)
-        alpha = ["A","B","C","D","E","F","G","H","I","J"] # 700/70 posições discretas eixo y - vertical
+    def __init__(self): #mï¿½todo construtor da classe
+        tileSize = 70 #tamanho bï¿½sico dos sprites (imagens)
+        alpha = ["A","B","C","D","E","F","G","H","I","J"] # 700/70 posiï¿½ï¿½es discretas eixo y - vertical
         self.abscissa = range(-tileSize, 2940, tileSize) # eixo x - horizontal
         self.ordinate = dict(zip(alpha, range(0, 700 , tileSize))) # eixo y - vertical
         
@@ -33,7 +33,7 @@ class Position:
         return self.abscissa[x]
     
     def getOrdinate(self, y):
-        return self.ordinate[y] # retorna valor para intervalo de A à J
+        return self.ordinate[y] # retorna valor para intervalo de A ï¿½ J
 
     def getPosition(self, pos):
         yLetter = pos[0].upper()
@@ -126,7 +126,7 @@ while running:
     #Seta
     screen.blit(signRightImg, (0, height - tileSize * 3))
     
-    #Chão
+    #Chï¿½o
     for grid in range(0, 1000, tileSize):	
     	screen.blit(grassMidImg, (grid, height - tileSize * 2))
     	screen.blit(grassCenterImg, (grid, height - tileSize))
@@ -137,6 +137,13 @@ while running:
     #Plataforma
     #x, y = grid.getPosition("D10")
     drawPlatform(400, 400)
+
+    # inicializa font
+    gamefont = pygame.font.SysFont("monospace", 20)
+
+    # TÃ­tulo do jogo
+    label = gamefont.render("Space Nuts!! Insper PyGame...", 1, (0,0,0))
+    screen.blit(label, (10, 10))
 
     #Avatar
     screen.blit(avatarCurrentImg, (avatarX, avatarY))
